@@ -1,94 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Insta-Sohor</title>
-        <link rel="stylesheet" href="./css/style.css" />
-        <!-- Latest compiled and minified CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta-Sohor</title>
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-        <!-- google Montserrat  font  -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-                <a class="navbar-brand" href="#">Insta-Sohor</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- google Montserrat  font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-                <div
-                    class="collapse navbar-collapse justify-content-end"
-                    id="navbarSupportedContent"
-                >
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-link active" role="button" onclick="switchTab( 'posts' )">
-                            <i class="fa-solid fa-house"></i>
-                        </li>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+        <a class="navbar-brand" href="#">Insta-Sohor</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                        <li class="nav-link active" role="button" onclick="switchTab( 'liked' )">
-                            <i class="fa-solid fa-heart text-danger"></i>
-                        </li>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'posts' )"
+            >
+              <i class="fa-solid fa-house"></i>
+            </li>
 
-                        <li class="nav-link active" role="button" onclick="switchTab( 'reported' )">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main class="main container mx-auto p-3">
-            <div id="posts">
-            </div>
-            <div id="liked">
-                <h1>Liked posts</h1>
-            </div>
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'liked' )"
+            >
+              <i class="fa-solid fa-heart text-danger"></i>
+            </li>
 
-            <div id="reported">
-                <h1>Reported posts</h1>
-            </div>
-        </main>
-        <section>
-            <h1>Questions:~</h1>
-            <h3>Q1: How does JavaScript work?</h3>
-            <p>Answer-Q1: </p>
-            <h3>Q2: What does JavaScript Event-Loop do?</h3>
-            <p>Answer-Q2: </p>
-            <h3>Q3: What is different of Local Storage and Session Storage?</h3>
-            <p>Answer-Q3: </p>
-        </section>
-        <footer></footer>
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'reported' )"
+            >
+              <i class="fa-solid fa-eye-slash"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main container mx-auto p-3">
+      <div id="posts"></div>
+      <div id="liked">
+        <h1>Liked posts</h1>
+      </div>
 
-        <!-- add javascript  file  -->
-        <script src="./js/app.js"></script>
-    </body>
+      <div id="reported">
+        <h1>Reported posts</h1>
+      </div>
+    </main>
+    <section class="container">
+      <h1 class="text-center bg-info rounded text-uppercase py-3">
+        Questions & Answers
+      </h1>
+      <h3 class="text-warning">Q1: How does JavaScript work?</h3>
+      <p class="fs-5">
+        <span class="text-success">Answer-Q1:</span> JavaScript is a client side
+        scripting language. Client side scripting language means it runs at the
+        client machine ad it runs inside the web browsers. But there is the
+        important thing is that browsers must be suppot JavaScript. Nowadays
+        many browsers support JavaScript and have their own engine. Example,
+        google chrome has it own JavaScript engine called v8. One of the most
+        comon uses of javascript is to validate data given by the user in the
+        form fields. We use alert message by using javascript. That shows to the
+        user on their display an alert. Now the most important thing is how
+        browsers understands javascript code. Its simple. We already know
+        javascript is an interpreted language. That means javascript engine
+        coverts the code line by line. When we give some code via javascript to
+        the browsers, browsers engine runs code and the output after execute.
+      </p>
+      <h3 class="text-warning">
+        Q3: What is different of Local Storage and Session Storage?
+      </h3>
+      <p class="fs-5"><span class="text-success">Answer-Q3: </span>Local storage stored data in web browsers. It save the user information permanently in the browsers. And session storage also stored data in web browsers. But it is not permanent. After closing the browsers window it cleard the saved data. Session storage exits only within the current window. But Local storage do not do that. Local storage has no expiry date. It will be available for the users after closing the window. Local storage uses in various types. Shopping cart, user login information etc. Data stored in session storage is specific to the protocol of the page.Local storage data is specific to the protocol of the document. Local storage data for a document loaded in a "private browsing" or "incognito" session is cleared when the last "private" tab is closed.</p>
+    </section>
+    <footer></footer>
+
+    <!-- add javascript  file  -->
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom js -->
+    <script src="./js/app.js"></script>
+  </body>
 </html>
